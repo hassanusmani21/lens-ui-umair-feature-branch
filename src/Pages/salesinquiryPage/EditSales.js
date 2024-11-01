@@ -115,7 +115,11 @@ return (
 </Button>
 
 </div> */}
+<<<<<<< HEAD
   <h2>Sales Enquiry Details :</h2>
+=======
+  <h1 style={{marginLeft:'3%'}}>Sales Enquiry Details :</h1>
+>>>>>>> new-change/new-feature
 
     <TableContainer component={Paper} className="table-container">
       <Table sx={{ minWidth: 500 }} aria-label="customized table">

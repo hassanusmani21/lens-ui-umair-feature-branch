@@ -17,9 +17,21 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import { deleteDetail, searchFilter} from '../../apis/AgitatorApi';
 import'../../App.css'
 import useToken from '../../contextApi/useToken';
+<<<<<<< HEAD
 
 
 export default function EditAgitator() {
+=======
+// import { useEffect } from 'react';
+
+
+export default function EditAgitator() {
+
+  useEffect(() => {
+    // throw new Error("Test error!"); // This will trigger the error boundary
+  }, []);
+
+>>>>>>> new-change/new-feature
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);  
   const [isDeleted, setIsDeleted] = useState(false);  

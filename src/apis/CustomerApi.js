@@ -4,6 +4,7 @@ import moment from 'moment';
 
 
 // submit data
+<<<<<<< HEAD
 // export const handleSubmit = async (e, formData, navigate,setErrors,validateField) => {
 
 //   e.preventDefault();
@@ -133,14 +134,43 @@ export const handleSubmit = async (e, formData, navigate, setErrors, validateFie
   //   } catch (err) {
   //     console.log("Error during form submission:", err);
   //   }
+=======
+export const handleSubmit = async (e, formData, navigate) => {
+
+  e.preventDefault();
+  const dateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+
+
+  if (formData.customerDetail && formData.customerDetail.length > 0) {
+    formData.customerDetail[formData.customerDetail.length - 1].lastUpdatedOn = dateTime;
+    formData.customerDetail[formData.customerDetail.length - 1].insertedOn = dateTime;
+  } else {
+    formData.insertedOn = dateTime;
+    formData.lastUpdatedOn = dateTime;
+  }
+
+  try{
+
+    const res = await axiosInstance.post(`/lens/customer/save`, formData);
+  
+    console.log("response is ", res.data);
+    navigate(`/registerSuccess/${res.data}`);
+    console.log(formData);
+  }
+  catch(err){
+    console.log(err)
+>>>>>>> new-change/new-feature
   }
 };
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> new-change/new-feature
 // edit detail
 export const editDetail = (detail, navigate) => {
   console.log("edit detail is ", detail.customerReferenceNumber);
@@ -155,9 +185,15 @@ export const handleUpdate = async (e, formData, rId, navigate) => {
 
   if (formData.customerDetail && formData.customerDetail.length > 0) {
     formData.customerDetail[formData.customerDetail.length - 1].lastUpdatedOn = dateTime;
+<<<<<<< HEAD
   }
   
     formData.lastUpdatedOn = dateTime;
+=======
+  } else {
+    formData.lastUpdatedOn = dateTime;
+  }
+>>>>>>> new-change/new-feature
 
   const res = await axiosInstance.put(`lens/customer/Update`, formData);
 

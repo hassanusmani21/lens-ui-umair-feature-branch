@@ -74,10 +74,15 @@ export const handleUpdatePumpSeal = async (e,formData,pId,navigate) => {
   //get data by column name
   export const getColumnData = async (colName, setptOption,setarOption,setsaOption,setstOption,setstgOption,setcstOption,setpfOption,setfnOption)=>{
 
+<<<<<<< HEAD
 
     try {
       const res = await axiosInstance.get(`lens/queryDrawingMasterTablebyColumn?columnName=${colName}`);
       
+=======
+    try {
+      const res = await axiosInstance.get(`lens/queryDrawingMasterTablebyColumn?columnName=${colName}`);
+>>>>>>> new-change/new-feature
       switch(colName){
         case 'Pump Type' :
           setptOption(res.data);

@@ -71,7 +71,10 @@ export const getAllApi = async(currentPage, itemsPerPage, setData, setIsDeleted)
 } 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> new-change/new-feature
 // delete One
 export const deleteDetail = async (crId,data, setData,) => {
   try {

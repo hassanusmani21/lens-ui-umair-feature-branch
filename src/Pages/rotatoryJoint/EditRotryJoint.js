@@ -27,7 +27,10 @@ export default function EditRotary() {
   const navigate = useNavigate();  
   const [rotaryDrfNumber, setRotaryDrfNumber] = useState();
   const [customerName, setcustomerName] = useState();
+<<<<<<< HEAD
   const [shaftSize, setShaftSize] = useState();
+=======
+>>>>>>> new-change/new-feature
   const [branch, setBranch] = useState();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
@@ -66,18 +69,27 @@ export default function EditRotary() {
 return (
   <div >
 
+<<<<<<< HEAD
 <div className="editContainer">
 <h2>Search and Filter</h2>
 
 <Grid container spacing={2} >
 
 <Grid container spacing={2} alignItems="center" sx={{mx:3, my:1}}>
+=======
+<div className='editContainer'>
+    <h2>Search and Filter</h2>
+<div style={{display:"flex", justifyContent:"space-between",flexWrap:"wrap",gap:"18px",padding:"25px",}}>
+>>>>>>> new-change/new-feature
 <Grid item xs={12} sm={4}>
 {/* <InputLabel className="ip-label">Rotary Drf No</InputLabel> */}
     <TextField
       size="small"
       className="custom-text-field"
+<<<<<<< HEAD
       fullWidth
+=======
+>>>>>>> new-change/new-feature
       name="rotaryDrfNumber"
       label="Rotary Drf No"
       value={rotaryDrfNumber}
@@ -89,7 +101,10 @@ return (
   <TextField
     size="small"
     className="custom-text-field"
+<<<<<<< HEAD
     fullWidth
+=======
+>>>>>>> new-change/new-feature
     name="branch"
     value={branch}
     label="Branch"
@@ -102,7 +117,10 @@ return (
   <TextField
     size="small"
     className="custom-text-field"
+<<<<<<< HEAD
     fullWidth
+=======
+>>>>>>> new-change/new-feature
     name="customerName"
     label="Customer Name"
     value={customerName}
@@ -110,6 +128,7 @@ return (
   />
 </Grid>
 
+<<<<<<< HEAD
 <Grid item xs={12} sm={4}>
   {/* <InputLabel className="ip-label">Customer Name</InputLabel> */}
   <TextField
@@ -126,6 +145,47 @@ return (
 
 
 <Button onClick={handleSearch}  style={{width:"15%",margin:"0.8rem 2.5rem", color:"white", backgroundColor:"#03C9D7"}} variant="contained">
+=======
+<Grid item xs={4}>
+  <TextField
+    size="small"
+    type="datetime-local"
+    className="custom-text-field"
+    value={startDate}
+    onChange={(e) => setStartDate(e.target.value)}
+    label="Start Date"
+    InputLabelProps={{
+      shrink: true, // This will keep the label from overlapping
+      className: startDate ? 'label-focused' : 'label-default', // Conditional class based on value
+    }}
+    inputProps={{
+      placeholder: startDate ? "" : "dd-mm-yyyy", // Show date format when empty
+    }}
+  />
+</Grid>
+
+<Grid item xs={3}>
+        <TextField
+        className='custom-text-field'
+        size="small"
+        type="datetime-local"
+        value={endDate}
+        InputLabelProps={{
+          shrink: true, // This will keep the label from overlapping
+          className: endDate ? 'label-focused' : 'label-default', // Conditional class based on value
+        }}
+        inputProps={{
+          placeholder: endDate ? "" : "dd-mm-yyyy", // Show date format when empty
+        }}
+        onChange={(e)=>setEndDate(e.target.value)}
+        label="End Date"
+      />
+      </Grid>
+
+</div>
+
+<Button onClick={handleSearch}  style={{width:"15%",margin:"1rem 2rem", color:"white", backgroundColor:"#03C9D7"}} variant="contained">
+>>>>>>> new-change/new-feature
   Search
 </Button>
 
@@ -138,6 +198,7 @@ return (
         <TableHead className="table-header">
           <TableRow>
             <TableCell>Sr No</TableCell>
+<<<<<<< HEAD
             <TableCell align="right">Drf Number</TableCell>
             <TableCell align="right">Customer Name</TableCell>
             <TableCell align="right">Branch</TableCell>
@@ -146,6 +207,13 @@ return (
             <TableCell align="right">Created By</TableCell>
             <TableCell align="right">Updated On</TableCell>
             <TableCell align="right">Updated By</TableCell>
+=======
+            <TableCell align="right">Rotary Drf Number</TableCell>
+            <TableCell align="right">Name</TableCell>
+            <TableCell align="right">Branch</TableCell>
+            <TableCell align="right">Inserted On</TableCell>
+            <TableCell align="right">Last Updated On</TableCell>
+>>>>>>> new-change/new-feature
             <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
@@ -161,11 +229,16 @@ return (
                 <TableCell align="right">{row.rotaryDrfNumber}</TableCell>
                 <TableCell align="right">{row.customerName}</TableCell>
                 <TableCell align="right">{row.branch}</TableCell>
+<<<<<<< HEAD
                 <TableCell align="right">{row?.shaftSize}</TableCell>
                 <TableCell align="right">{row?.insertedOn}</TableCell>
                 <TableCell align="right">{row.createdBy}</TableCell>
                 <TableCell align="right">{row.lastUpdatedOn}</TableCell>
                 <TableCell align="right">{row?.UpdatedBy}</TableCell>
+=======
+                <TableCell align="right">{row.insertedOn}</TableCell>
+                <TableCell align="right">{row.lastUpdatedOn}</TableCell>
+>>>>>>> new-change/new-feature
                 <TableCell align="right">
                   <button onClick={() => editDetail(row)} style={{ margin: '0px 3px', border: 'none', backgroundColor: 'transparent', cursor: 'pointer' }}>
                     <EditIcon style={{ color: 'blue' }} />
@@ -202,9 +275,15 @@ return (
       </div>
       <hr style={{ border: '1px solid lightGray' }} />
     </TableContainer>
+<<<<<<< HEAD
     </Grid>
     </div>
     </div>
+=======
+    
+    </div>
+  </div>
+>>>>>>> new-change/new-feature
 );
 }
 

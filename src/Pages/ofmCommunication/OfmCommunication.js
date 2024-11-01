@@ -225,7 +225,10 @@ function OfmCommunication() {
                 currentActivity: newValue || ''
               });
             }}
+<<<<<<< HEAD
             
+=======
+>>>>>>> new-change/new-feature
             inputValue={formDataState.currentActivity || ''}
             onInputChange={(event, newInputValue) => {
               setFormDataState({

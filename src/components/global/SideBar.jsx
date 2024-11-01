@@ -50,6 +50,7 @@ const CustomSidebar = ({isSidebar,setIsSidebar}) => {
     
       const getSubMenuStyle = (menuName) => ({
         backgroundColor: activeSubMenu === menuName ? 'rgb(3, 201, 215)' : 'transparent',
+<<<<<<< HEAD
         color: activeSubMenu === menuName ? 'white' : 'rgba(0, 0, 0, 0.87)',
         borderRadius: '8px',
         margin: '4px 16px',
@@ -57,16 +58,27 @@ const CustomSidebar = ({isSidebar,setIsSidebar}) => {
         padding:"6px",
         lineHeight:'1.5',
         fontWeight:'400',
+=======
+        color: activeSubMenu === menuName ? 'white' : 'rgba(0, 0, 0, 0.54)',
+        borderRadius: '8px',
+        margin: '4px 16px',
+        padding:"6px",
+>>>>>>> new-change/new-feature
         fontFamily:'DM Sans, sans-serif'
       });
     
       const getMenuItemStyle = (menuName) => ({
+<<<<<<< HEAD
         color: activeItemMenu === menuName ? 'rgb(3, 201, 215)' : 'rgba(0, 0, 0, 0.87)',
+=======
+        color: activeItemMenu === menuName ? 'rgb(3, 201, 215)' : 'rgba(0, 0, 0, 0.54)',
+>>>>>>> new-change/new-feature
         margin: '4px 18px',
         borderRadius: '6px',
         fontFamily:'DM Sans, sans-serif',
       });
 
+<<<<<<< HEAD
       
     
       const handleSubMenuClick = (menuName) => {
@@ -77,6 +89,12 @@ const CustomSidebar = ({isSidebar,setIsSidebar}) => {
         } else {
           setActiveSubMenu(menuName); // Open the clicked submenu and close others
         }
+=======
+    
+      const handleSubMenuClick = (menuName) => {
+        console.log(`SubMenu ${menuName} clicked`);
+        setActiveSubMenu(menuName);
+>>>>>>> new-change/new-feature
       };
 
 
@@ -86,9 +104,12 @@ const CustomSidebar = ({isSidebar,setIsSidebar}) => {
 
       };
 
+<<<<<<< HEAD
 
       console.log("authstate is ",authState)
 
+=======
+>>>>>>> new-change/new-feature
   return (
     <Box
       ref={sidebarRef}
@@ -110,16 +131,27 @@ const CustomSidebar = ({isSidebar,setIsSidebar}) => {
                 {/* <Typography sx={{ fontSize: '0.7rem' }} color="textSecondary">
                     Created By
                 </Typography> */}
+<<<<<<< HEAD
                   {/* <Typography variant="h6" color="textSecondary" fontWeight="bold">
                     Menu Bar
                   </Typography> */}
+=======
+                  <Typography variant="h6" color="textSecondary" fontWeight="bold">
+                    Menu Bar
+                  </Typography>
+>>>>>>> new-change/new-feature
                 </Box>
               </Box>
             )}
             
             <Box pl={isSidebar ? 0 : 3}>
               <Menu>
+<<<<<<< HEAD
                 {authState?.designation?.designationName === 'ADMIN' && (
+=======
+
+                {authState?.designation === 'ADMIN' && (
+>>>>>>> new-change/new-feature
                <SubMenu label={<Typography variant="body1">Users</Typography>} style={getSubMenuStyle("Users")} onClick={() => handleSubMenuClick("Users")} icon={<AccountCircleOutlinedIcon />}>
                   <Link to="/CreateUser" style={{ color: 'inherit', textDecoration: "none" }}>
                     <MenuItem

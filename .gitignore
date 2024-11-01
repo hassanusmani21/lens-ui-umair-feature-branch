@@ -1,4 +1,8 @@
 node_modules
 build
+<<<<<<< HEAD
 updated.zip
 build.zip
+=======
+updated.zip
+>>>>>>> new-change/new-feature

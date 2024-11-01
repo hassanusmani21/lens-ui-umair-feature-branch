@@ -3,7 +3,11 @@ import Cookies from 'js-cookie';
 
 // Ensure baseURL is correctly defined
 // const baseURL = process.env.REACT_APP_BASE_URL ;
+<<<<<<< HEAD
 const baseURL = "https://crm-api.synterratech.in/lens-svc";
+=======
+const baseURL = "https://crm-api.synterratech.in/lens-svc/";
+>>>>>>> new-change/new-feature
 
 // Create an Axios instance
 const axiosInstance = axios.create({

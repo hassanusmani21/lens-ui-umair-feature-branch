@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 import { TextField ,Button,  Container, Grid, InputLabel ,Typography, IconButton, Autocomplete, FormHelperText   } from '@mui/material';
+=======
+import { TextField ,Button,  Container, Grid, InputLabel , IconButton } from '@mui/material';
+>>>>>>> new-change/new-feature
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import "./CustomerForm.css";
 import { useNavigate, useParams } from 'react-router-dom';
 import { getCustomer, handleSubmit } from '../../../apis/CustomerApi';
 import { handleUpdate } from '../../../apis/CustomerApi';
+<<<<<<< HEAD
 import { black } from '@mui/material/colors';
 import moment from 'moment';
 import axiosInstance from '../../../axios/axiosInstance';
 import { useAuth } from '../../../contextApi/AuthContext';
+=======
+>>>>>>> new-change/new-feature
 
 
 
@@ -17,6 +24,7 @@ export default function Customer() {
 
   const navigate = useNavigate();
   let {rId} = useParams();
+<<<<<<< HEAD
   const dateTime = moment().format('YYYY-MM-DD HH:mm:ss');
   const [options, setOptions] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
@@ -35,6 +43,20 @@ export default function Customer() {
     updatedByUser:authState?.sub,
     createdOn:dateTime,
     updatedOn:dateTime
+=======
+
+
+
+ 
+  const [formData, setFormData] = useState({
+    branch: '',
+    customerName: '',
+    customerDetail:[],
+    insertedByUserId:'10223',
+    lastUpdatedByUserId:'10223',
+    insertedOn:'',
+    lastUpdatedOn:''
+>>>>>>> new-change/new-feature
   });
   
   
@@ -46,6 +68,7 @@ export default function Customer() {
 
       setFormData({ branch: '',
       customerName: '',
+<<<<<<< HEAD
       branch:'',
       customerDetail:[],
       createdByUser:authState?.sub,
@@ -56,6 +79,18 @@ export default function Customer() {
     }
   },[rId,authState])
 
+=======
+      customerDetail:[],
+      insertedByUserId:'10223',
+      lastUpdatedByUserId:'10223',
+      insertedOn:'',
+      lastUpdatedOn:''})
+
+    }
+    
+    
+  },[rId])
+>>>>>>> new-change/new-feature
 
 
 
@@ -63,16 +98,20 @@ export default function Customer() {
   const handleChange = (e, index) => {
     const { name, value } = e.target;
     const newFormData = { ...formData };
+<<<<<<< HEAD
     let validationError = validateField(name, value);
 
 
 
+=======
+>>>>>>> new-change/new-feature
     if (index === undefined) {
       newFormData[name] = value;
     } else {
       newFormData.customerDetail[index][name] = value;
     }
     setFormData(newFormData);
+<<<<<<< HEAD
 
       // Update errors
       setErrors((prevErrors) => ({
@@ -80,6 +119,8 @@ export default function Customer() {
       [name]: validationError
   }));
 
+=======
+>>>>>>> new-change/new-feature
   };
 
 
@@ -89,6 +130,7 @@ export default function Customer() {
       customerDetail: [
         ...prevState.customerDetail,
         {
+<<<<<<< HEAD
           ContactDetailReferenceNo: "",
           contactPerson: "",
           designation: "",
@@ -109,6 +151,20 @@ export default function Customer() {
           panNo: "",
           referenceDrawingNo: "",
           customerAddress: ""
+=======
+          customerAddress: '',
+          contactPerson: '',
+          designation: '',
+          telephoneNos: '',
+          eccNo: '',
+          sstNo: '',
+          cstNo: '',
+          insertedByUserId: '10223',
+          lastUpdatedByUserId: '10223',
+          gstNo: '',
+          industryId: '',
+          panNo: ''
+>>>>>>> new-change/new-feature
         }
       ]
     }));
@@ -124,6 +180,7 @@ export default function Customer() {
   };
   
 
+<<<<<<< HEAD
   const validateField = (name, value) => {
     let error = '';
   
@@ -170,6 +227,8 @@ export default function Customer() {
   };
   
 
+=======
+>>>>>>> new-change/new-feature
 
   const cancelUpdate = ()=>{
 
@@ -181,6 +240,7 @@ export default function Customer() {
   }
   }
 
+<<<<<<< HEAD
 
 
 const getDataByName = async (newInputValue) => {
@@ -238,10 +298,29 @@ const getDataByName = async (newInputValue) => {
           className="custom-text-field"
           id="disableItem"
           value={rId?formData.customerReferenceNumber:''}
+=======
+  return (
+
+ 
+    <Container className="container" sx= {{marginTop:"20px", backgroundColor:"rgb(250, 251, 251)"}}>
+      <form >
+        <Grid container spacing={2} >
+          <div className='card' style={{width:'100%'}}>
+          {!rId ? <h1>New Customer Registration :</h1> : <h1>Update Customer :</h1>}
+          <Grid container spacing={2} alignItems="center">
+    {rId && (
+      <Grid item xs={4}>
+        <TextField
+          size="small"
+          name="customerReferenceNumber"
+          className="custom-text-field"
+          value={formData.customerReferenceNumber}
+>>>>>>> new-change/new-feature
           label="Customer Reference No"
           InputLabelProps={{
             shrink: Boolean(formData.customerReferenceNumber),
           }}
+<<<<<<< HEAD
           autoFocus={formData.customerReferenceNumber} // Autofocus if the value exists
           InputProps={{
             readOnly: true,  // Prevent user input
@@ -675,6 +754,177 @@ const getDataByName = async (newInputValue) => {
 
 
         <Grid container  spacing={2}> 
+=======
+          autoFocus={!formData.customerReferenceNumber} // Autofocus if the value exists
+        />
+      </Grid>
+    )}
+
+    <Grid item xs={4}>
+      <TextField
+        size="small"
+        // className="custom-text-field"
+        name="branch"
+        className='custom-text-field'
+        value={formData.branch}
+        onChange={handleChange}
+        label="Branch"
+      />
+    </Grid>
+
+    <Grid item xs={4}>
+      <TextField
+        size="small"
+        className="custom-text-field"
+        name="customerName"
+        value={formData.customerName}
+        onChange={handleChange}
+        label="Customer Name"
+      />
+    </Grid>
+  </Grid>
+            </div>
+          {/* </Box> */}
+          {formData?.customerDetail?.map((detail, index) => (
+            <div className='card'  key = {index}>
+          <h3 >Customer Detail {index + 1}</h3>
+      <Grid container  spacing={2}>
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label">Customer Address</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="customerAddress"
+            value={detail.customerAddress}
+            onChange={e => handleChange(e, index)}
+            label="Customer Address"
+            fullWidth
+          />
+
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >Contact Person</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="contactPerson"
+            value={detail.contactPerson}
+            onChange={e => handleChange(e, index)}
+            label='Contact Person'
+            fullWidth
+          />
+        </Grid>
+
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label">Industry Id</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="industryId"
+            value={detail.industryId}
+            onChange={e => handleChange(e, index)}
+            label="Industry Id"
+            fullWidth
+          />
+
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"> Designation</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="designation"
+            value={detail.designation}
+            onChange={e => handleChange(e, index)}
+            label="Designation"
+            fullWidth
+          />
+        </Grid>
+
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >Telephone Number</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="telephoneNos"
+            value={detail.telephoneNos}
+            onChange={e => handleChange(e, index)}
+            label="Telephone Number"
+            fullWidth
+          />
+        </Grid>
+
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label">Ecc No</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="eccNo"
+            value={detail.eccNo}
+            onChange={e => handleChange(e, index)}
+            label="Ecc No"
+            fullWidth
+          />
+        </Grid>
+
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >SSt No</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="sstNo"
+            value={detail.sstNo}
+            onChange={e => handleChange(e, index)}
+            label="SSt No"
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >GST No</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="gstNo"
+            value={detail.gstNo}
+            onChange={e => handleChange(e, index)}
+            label="GST No"
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >Pan No</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="panNo"
+            value={detail.panNo}
+            onChange={e => handleChange(e, index)}
+            label="Pan No"
+            fullWidth
+          />
+
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          {/* <InputLabel className="ip-label"  >CST No</InputLabel > */}
+          <TextField
+            size="small" 
+            className="custom-text-field" 
+            name="cstNo"
+            value={detail.cstNo}
+            onChange={e => handleChange(e, index)}
+            label="CST No"
+            fullWidth
+          />
+        </Grid>
+        
+>>>>>>> new-change/new-feature
         <Grid item xs={12}>
           <IconButton className="deleteIcon" onClick={() => handleDeleteCustomerDetail(index)} >
             <DeleteIcon />
@@ -683,14 +933,25 @@ const getDataByName = async (newInputValue) => {
       </Grid>
     </div>
 
+<<<<<<< HEAD
 ))}
+=======
+   
+          ))}
+>>>>>>> new-change/new-feature
 
           </Grid>
           <Grid item xs={4}>
           <Grid item xs={4}  >
+<<<<<<< HEAD
 <Button className="add-btn" sx={{margin:"0rem 1rem 1rem 0rem"}}  onClick={handleAddCustomerDetail}><AddIcon/> Add Customer Details</Button>
         
         {!rId&&!formData.customerReferenceNumber?(<Button className="submit-btn" sx={{margin:"1rem 1rem 0rem 1rem"}} type="submit" onClick ={(e)=>handleSubmit(e,formData,navigate,setErrors,validateField)} variant="contained" >Submit</Button>) : (
+=======
+<Button className="add-btn" sx={{margin:"0rem 1rem 1rem 1rem"}}  onClick={handleAddCustomerDetail}><AddIcon/> Add Customer Details</Button>
+        
+        {!rId ?( <Button className="submit-btn" sx={{margin:"1rem 1rem 0rem 1rem"}} type="submit" onClick ={(e)=>handleSubmit(e,formData,navigate)} variant="contained" >Submit</Button>) : (
+>>>>>>> new-change/new-feature
           <>
             <Button className="update-btn" sx={{margin:"1rem 1rem 0rem 1rem"}} variant="contained" onClick={(e)=>handleUpdate(e,formData,rId,navigate)} >Update</Button>
             <Button className="cancel-btn"  variant="contained" onClick={cancelUpdate} >Cancel</Button> </>)}

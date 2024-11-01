@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import { useEffect } from 'react';
+>>>>>>> new-change/new-feature
 import { Container, Typography, Button } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -7,6 +11,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 const UpdateSuccessPage = () => {
     const {id} = useParams();
     const navigate = useNavigate();
+<<<<<<< HEAD
+=======
+
+>>>>>>> new-change/new-feature
     
     
     return (

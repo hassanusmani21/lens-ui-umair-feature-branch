@@ -32,6 +32,11 @@ import EditOfm from '../Pages/ofm/EditOfm.js';
 import OfmSuccess from '../Pages/ofm/OfmSuccess.js';
 import OfmCommunication from '../Pages/ofmCommunication/OfmCommunication.js';
 import UpdatePassword from '../Pages/resetPassword/UpdateReset.js';
+<<<<<<< HEAD
+=======
+import { ErrorBoundary } from 'react-error-boundary'; // Adjust import based on your package
+import CustomErrorBoundary from '../FallfallbackUi/Erorfallnackui.js'; // Adjust the path accordingly
+>>>>>>> new-change/new-feature
 
 
 
@@ -46,10 +51,16 @@ const AllRoute = ({isSidebar}) => {
   const sidebarOpenStyle = {
     width: "86%", // Sidebar open, adjust width
     position: "absolute",
+<<<<<<< HEAD
     right: '-5em',
     marginTop: "5.4rem",
     overflow:"hidden",
 
+=======
+    right: '-5.8em',
+    marginTop: "5.4rem",
+    overflow:"hidden"
+>>>>>>> new-change/new-feature
   };
 
 
@@ -62,9 +73,15 @@ const AllRoute = ({isSidebar}) => {
 
   
   return (
+<<<<<<< HEAD
     <div style={!isSidebar&&!isLogin&&!reset ? sidebarOpenStyle : sidebarClosedStyle}>
 
     <Routes>
+=======
+    <div style={!isSidebar ? sidebarOpenStyle : sidebarClosedStyle}>
+      <CustomErrorBoundary>
+        <Routes>
+>>>>>>> new-change/new-feature
           <Route path="/user" element={<UserDashboard />} />
           <Route path="/createAgitator" element={<AgitatorSeal />} />
           <Route path="/editAgitator" element={<EditAgitator />} />
@@ -103,10 +120,16 @@ const AllRoute = ({isSidebar}) => {
           <Route path="/quotationSuccess" element={<QuotationSuccess />} />
           <Route path="/ofmComm" element={<OfmCommunication />} />
           <Route path="/updatePassword" element={<UpdatePassword />} />
+<<<<<<< HEAD
       
     </Routes>
   </div>
 
+=======
+        </Routes>
+        </CustomErrorBoundary>
+    </div>
+>>>>>>> new-change/new-feature
   );
 };
 

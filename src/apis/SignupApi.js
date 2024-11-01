@@ -3,9 +3,13 @@
 
  
  
+<<<<<<< HEAD
 //  const baseUrl = process.env.REACT_APP_BASE_URL
  
 const baseUrl = "https://crm-api.synterratech.in/lens-svc"
+=======
+ const baseUrl = process.env.REACT_APP_BASE_URL
+>>>>>>> new-change/new-feature
 
 
  //get All Designation
@@ -80,9 +84,15 @@ const baseUrl = "https://crm-api.synterratech.in/lens-svc"
       branchName: branch.branchName,
       region: branch.branchName
     }));
+<<<<<<< HEAD
     
     try {
       const res = await axiosInstance.post(`${baseUrl}/user/createUser`, formData);
+=======
+  
+    try {
+      const res = await axiosInstance.post(`${baseUrl}/user/createAccount`, formData);
+>>>>>>> new-change/new-feature
       const { data } = res;
       console.log("response Data ", data);
       navigate('/user');

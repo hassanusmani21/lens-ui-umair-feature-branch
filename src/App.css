@@ -4,14 +4,18 @@ body{
     font-size: 0.8rem !important;
     line-height: 1.5 !important;
     letter-spacing: 0.00938em !important;
+<<<<<<< HEAD
     overflow-x: hidden;
     width: 100%;
+=======
+>>>>>>> new-change/new-feature
   }
   
   /* heading */
 
   h1{
     margin-left:5px;
+<<<<<<< HEAD
     margin-bottom:1rem;
     color:#03346E;
     font-family: "DM Sans", sans-serif !important;
@@ -32,6 +36,13 @@ body{
     color: rgb(3, 201, 215);
     border-radius: 10px 10px 0 0;
 }
+=======
+    color:#03346E;
+    font-family: 'Sans-serif fonts', Times, serif !important;
+  }
+
+ 
+>>>>>>> new-change/new-feature
 
   
   .css-1tqrhto >.ps-menu-button {
@@ -82,18 +93,33 @@ body{
     background-color:white;
     border:1px solid #ddd;
     box-shadow:rgba(90, 114, 123, 0.11) 0px 7px 30px 0px;
+<<<<<<< HEAD
     margin:1.5em 1em 0 5%;
     border-radius:8px;
      width:88%;
+=======
+    margin:1.6em 1em 0 5%;
+     border-radius:8px;
+     width:86%;
+>>>>>>> new-change/new-feature
   }
 
 .editContainer>h2{
 margin-left: 2.5%;
+<<<<<<< HEAD
 font-size: 1.4rem;
 line-height: 1.5;
  font-weight: 550;
 color:#03346E;
 font-family: 'Sans-serif fonts', Times, serif !important;
+=======
+font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 550;
+color:#03346E;
+font-family: 'Sans-serif fonts', Times, serif !important;
+
+>>>>>>> new-change/new-feature
 }
 
 
@@ -128,6 +154,7 @@ font-family: 'Sans-serif fonts', Times, serif !important;
     box-shadow:rgba(90, 114, 123, 0.11) 0px 7px 30px 0px !important;
     max-width: 100%;
   }
+<<<<<<< HEAD
 
   
   .card>h4{
@@ -135,14 +162,21 @@ font-family: 'Sans-serif fonts', Times, serif !important;
     font-size: 1.1rem;
     font-weight:600;
   }
+=======
+>>>>>>> new-change/new-feature
   
   
   .add-btn{
     background-color: #00C292 !important;
     color: white !important;
     height: 20px !important;
+<<<<<<< HEAD
     margin: 3rem 1.5rem 3rem 0rem !important;  
     padding: 8px 12px !important; 
+=======
+    margin: 3rem 1.5rem !important;
+   
+>>>>>>> new-change/new-feature
   }
   
   .css-um1o6k{
@@ -207,7 +241,11 @@ font-family: 'Sans-serif fonts', Times, serif !important;
   .submit-btn{
     background-color: #03C9D7 !important;
     padding: 8px 12px !important;
+<<<<<<< HEAD
     margin: 2rem 0rem !important;
+=======
+    margin: 2rem 1.5rem !important;
+>>>>>>> new-change/new-feature
   }
   
   
@@ -251,7 +289,11 @@ font-family: 'Sans-serif fonts', Times, serif !important;
     bottom: 0;
     display: flex;
     padding-right: 0px;
+<<<<<<< HEAD
     margin: 5rem 1rem 1rem 0.5rem; 
+=======
+    margin: 5rem 1rem 1rem 1rem; 
+>>>>>>> new-change/new-feature
   }
   
   .sidebarBox:hover {
@@ -348,11 +390,16 @@ font-family: 'Sans-serif fonts', Times, serif !important;
     flex: 1;
     color:#B0B0B0;
     position: fixed;
+<<<<<<< HEAD
     max-height: 85vh !important;
+=======
+    max-height: 82vh !important;
+>>>>>>> new-change/new-feature
     box-shadow:rgba(90, 114, 123, 0.11) 0px 7px 30px 0px;
     transition: box-shadow 0.3s ease; /* Smooth transition */
     overflow-y: auto;
     z-index: 50000;
+<<<<<<< HEAD
     margin-left:0.8%;
     margin-top:0.5%;
     border-radius: 18px;
@@ -389,6 +436,14 @@ font-family: 'Sans-serif fonts', Times, serif !important;
 .custom-input {
   cursor: not-allowed !important; /* Apply not-allowed cursor to input field */
 }
+=======
+    margin-left:2%;
+    margin-top:0.8%;
+    border-radius: 18px;
+}
+
+
+>>>>>>> new-change/new-feature
 
 
 /* Logout Button */
@@ -555,13 +610,21 @@ border-radius:3px
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> new-change/new-feature
 /* Custom Text Field */
 .custom-text-field {
   border-radius: 4px;
   border-color: #ccc;
   color: black;
   width: 100%; /* Apply fullWidth behavior */
+<<<<<<< HEAD
   
+=======
+>>>>>>> new-change/new-feature
 }
 
 
